@@ -1,18 +1,21 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/casevals/public_html/website_7d06a396
-    - /bin/cp -R images $DEPLOYPATH/
-    - /bin/cp -R css $DEPLOYPATH/
-    - /bin/cp -R js $DEPLOYPATH/
-    - /bin/cp -R services $DEPLOYPATH/
-    - /bin/cp -R locations $DEPLOYPATH/
-    - /bin/cp -R blog $DEPLOYPATH/
-    - /bin/cp -R about $DEPLOYPATH/
-    - /bin/cp -R contact $DEPLOYPATH/
-    - /bin/cp -R privacy $DEPLOYPATH/
-    - /bin/cp index.html $DEPLOYPATH/
-    - /bin/cp robots.txt $DEPLOYPATH/
-    - /bin/cp sitemap.xml $DEPLOYPATH/
+    - export REPOPATH=/home1/uycannmy/repositories/CAS-Evals
+    - export DEPLOYPATH=/home1/uycannmy/public_html/website_7d06a396
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -R $REPOPATH/images $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/css $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/js $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/services $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/locations $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/blog $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/about $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/contact $DEPLOYPATH/
+    - /bin/cp -R $REPOPATH/privacy $DEPLOYPATH/
+    - /bin/cp $REPOPATH/index.html $DEPLOYPATH/
+    - /bin/cp $REPOPATH/robots.txt $DEPLOYPATH/
+    - /bin/cp $REPOPATH/sitemap.xml $DEPLOYPATH/
+    - /bin/cp $REPOPATH/.htaccess $DEPLOYPATH/
     - find $DEPLOYPATH -type f -exec chmod 644 {} \;
     - find $DEPLOYPATH -type d -exec chmod 755 {} \;
